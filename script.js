@@ -1,8 +1,4 @@
-let mySound
-function preload() {
-  soundFormats('mp3,m4a');
-  mySound = loadSound("bite2sound.m4a");
-}
+
 
 
 class RandomWalker {
