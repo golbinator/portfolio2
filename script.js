@@ -105,4 +105,3 @@ class RandomWalker {
   function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
   }
-  
