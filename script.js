@@ -1,3 +1,10 @@
+let mySound
+function preload() {
+  soundFormats('mp3,m4a');
+  mySound = loadSound("bite2sound.m4a");
+}
+
+
 class RandomWalker {
     constructor(x, y) {
       this.x = x;
@@ -49,8 +56,8 @@ class RandomWalker {
   
     textX = random(width);
     textY = random(height);
-    textSpeedX = random(1, 3); // Slower speed
-    textSpeedY = random(1, 3);
+    textSpeedX = random(1, 5); // Slower speed
+    textSpeedY = random(1, 5);
   
     textAlign(CENTER, CENTER);
     background(255);
@@ -85,9 +92,12 @@ class RandomWalker {
     // Bounce off the edges
     if (textX > width - textSizeValue / 2 || textX < textSizeValue / 2) {
       textSpeedX *= -1;
+        mySound.play()
     }
     if (textY > height - textSizeValue / 2 || textY < textSizeValue / 2) {
       textSpeedY *= -1;
+       mySound.play()
+         
     }
   }
   
@@ -105,3 +115,4 @@ class RandomWalker {
   function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
   }
+  
